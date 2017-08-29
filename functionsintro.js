@@ -118,3 +118,22 @@ var cry = function booHoo(y) {
 };
 
 console.log(cry());
+
+// Setup
+function abTest(a, b) {
+  // Only change code below this line
+  if (a < 0) {
+    a;
+  }
+  if (b < 0) {
+    b;
+  }
+
+
+  // Only change code above this line
+
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+// Change values below to test your code
+abTest(2,2);
