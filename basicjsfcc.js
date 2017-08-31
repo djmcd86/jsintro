@@ -184,10 +184,32 @@ myBike.color = "orange";
 */
 var Car = function(wheels, seats, engines) {
   //Change this constructor
-  this.wheels = wheels;
+  this.wheels = wheels;   //These are no longer values but parameters
   this.seats = seats;
   this.engines = engines;
 };
 
-//Try it out here
 var myCar = new Car(3,3,2);
+
+//Using .map
+var oldArray = [1,2,3,4,5];
+
+var newArray = oldArray.map(function(val) {
+  return val + 3;
+});
+console.log(newArray);
+
+//Using REDUCE function to add an array:
+var array = [4,5,6,7,8];
+var singleVal = 0;
+
+singleVal = array.reduce(function(previousVal, currentVal) {
+  return previousVal + currentVal;
+}, 0);
+
+//Using FILTER
+var oldArray = [1,2,3,4,5,6,7,8,9,10];
+
+newArray = oldArray.filter(function (val){
+  return val < 6;
+});
