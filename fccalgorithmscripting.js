@@ -246,7 +246,86 @@ Write a function that splits an array (first argument) into groups the length
 
 function chunkArrayInGroups(arr, size) {
   // Break it up.
-  return arr;
+  loop
+
+  var newArr = [];
+  for (var i = 0; i < arr.length; i++) {    //incrememnt should be i+=size
+   newArr.push(arr.slice(0, size));     //slice points should be i, i+size
+  }
+  return newArr;
+}
+
+//FCC intermediate Solution
+var arr2 = [];
+for (var i = 0; i < arr.length; i+=size) {
+arr2.push(arr.slice(i , i+size));
+}
+return arr2;
 }
 
 chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+//Solution from Free Code Camp: This doesn't make much sense, but the above one does
+function chunkArrayInGroups(arr, size) {
+var temp = [];
+var result = [];
+for (var i = 0; i < arr.length; i++) {
+  if (i % size !== size-1) {
+    temp.push(arr[i]);
+  } else {
+    temp.push(arr[i]);
+    result.push(temp);
+    temp = [];
+  }
+}
+  if (temp.length !== 0) {
+    result.push(temp);
+    return result;
+  }
+
+//Slasher Flick
+//Return the remaining elements of an array after chopping off n elements from the head.
+function slasher(arr, howMany) {
+arr.splice(0, howMany)      //Almost too easy!!!
+return arr;
+}
+
+slasher([1, 2, 3], 2);
+
+//Mutations
+/*Return true if the string in the first element of the array contains all of
+ the letters of the string in the second element of the array.
+ */
+
+ /* Split string into individual letters. Iterate through the letters
+ checking using indexof()
+ */
+ function mutation(arr) {
+   var word = arr[0].toLowerCase();
+   var letters = arr[1].toLowerCase().split("");
+   var numbers = [];
+   for (var i = 0; i < letters.length; i++) {
+    if (word.indexOf(letters[i],0)==true) {
+      return true;
+    } else {
+      return false;
+    } //Need to iterate through whole array even if letters returns 'false'
+}
+//FCC solution
+function mutation(arr) {
+  var word = arr[0].toLowerCase();
+  var letters = arr[1].toLowerCase(); //No split!!
+  for (var i = 0; i < letters.length; i++) {  //no var
+    if (word.indexOf(letters[i]) === -1) { //-1 is undefined or false value
+
+      return false;
+    }
+      return true;
+  }     //needed to remove these brackets
+}
+
+//FALSY BOUNCER
+var truthy = arr.filter(function(i){
+  Boolean(true);
+})
+return truthy;
